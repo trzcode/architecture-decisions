@@ -8,5 +8,9 @@ plugins:
   - mermaid2
   - awesome-pages
 
+nav:
+  - Overview: index.md
+  - ... | glob: adr/*.md
+
 extra_javascript:
   - https://unpkg.com/mermaid/dist/mermaid.min.js
