@@ -10,6 +10,7 @@ Dieses Repository verwaltet unsere Architektur-Entscheidungen datengetrieben. Di
 1. Erstelle eine neue Datei in `docs/adr/`, z.B. `005-neue-technologie.md`.
 2. Kopiere das folgende Template in die Datei:
 
+```yaml
 ---
 id: ADR-XXX
 title: "Titel der Entscheidung"
@@ -34,6 +35,7 @@ Was haben wir entschieden?
 ## Konsequenzen
 Was sind die positiven/negativen Folgen?
 ---
+```
 
 3. **Push:** Sobald du die Datei nach `main` pushst, aktualisiert die GitHub Action automatisch den Index und alle Verlinkungen.
 
