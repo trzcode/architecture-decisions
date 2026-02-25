@@ -10,7 +10,7 @@ plugins:
 
 nav:
   - Overview: index.md
-  - ... | glob: adr/*.md
+  - adr/
 
 extra_javascript:
   - https://unpkg.com/mermaid/dist/mermaid.min.js
