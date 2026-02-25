@@ -6,6 +6,7 @@ plugins:
   - search
   - macros
   - mermaid2
+  - awesome-pages
 
 extra_javascript:
   - https://unpkg.com/mermaid/dist/mermaid.min.js
