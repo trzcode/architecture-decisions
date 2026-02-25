@@ -1,0 +1,11 @@
+site_name: Architecture Decision Records
+theme:
+  name: material
+
+plugins:
+  - search
+  - macros
+  - mermaid2
+
+extra_javascript:
+  - https://unpkg.com/mermaid/dist/mermaid.min.js
