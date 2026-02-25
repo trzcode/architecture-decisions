@@ -7,10 +7,11 @@ plugins:
   - macros
   - mermaid2
   - awesome-pages
+  - literate-nav
 
 nav:
   - Overview: index.md
-  - adr/
+  - "adr/*.md"
 
 extra_javascript:
   - https://unpkg.com/mermaid/dist/mermaid.min.js
