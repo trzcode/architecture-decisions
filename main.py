@@ -32,10 +32,11 @@ def define_env(env):
             with open(os.path.join(adr_dir, file), 'r', encoding='utf-8') as f:
                 content = yaml.safe_load(f.read().split('---')[1])
                 curr_id = content.get('id')
+                link = file.replace('.md', '')
                 for field, label in [('dependencies', 'Benötigt von'), ('references', 'Referenziert in')]:
                     for target in content.get(field) or []:
                         if target in backlinks:
-                            backlinks[target].append(f"{label}: [{curr_id}](../{file}.replace('.md', ''))")
+                            backlinks[target].append(f"{label}: [{curr_id}](../{file})")
         
         return adr_map, backlinks
 
