@@ -84,3 +84,12 @@ def define_env(env):
         if bl: lines.append(f"**Backlinks:** {', '.join(bl)}\n")
 
         return "\n".join(lines) + "\n\n---"
+
+def on_page_markdown(markdown, page, config, files):
+    """Setzt den Seitentitel basierend auf der ID und dem Titel im YAML-Header."""
+    if page.file.src_path.startswith('adr/'):
+        meta = page.meta
+        if 'id' in meta and 'title' in meta:
+            # Dies setzt den Titel, den MkDocs für den HTML-Header verwendet
+            page.title = f"{meta['id']}: {meta['title']}"
+    return markdown
