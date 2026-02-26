@@ -62,6 +62,7 @@ def define_env(env):
     @env.macro
     def render_adr_header():
         meta = env.page.meta
+        env.page.title = f"{meta.get('id')}: {meta.get('title')}"
         adr_map, backlinks = get_all_data()
         
         st = meta.get('status', 'unknown').lower()
@@ -85,11 +86,3 @@ def define_env(env):
 
         return "\n".join(lines) + "\n\n---"
 
-def on_page_markdown(markdown, page, config, files):
-    """Setzt den Seitentitel basierend auf der ID und dem Titel im YAML-Header."""
-    if page.file.src_path.startswith('adr/'):
-        meta = page.meta
-        if 'id' in meta and 'title' in meta:
-            # Dies setzt den Titel, den MkDocs für den HTML-Header verwendet
-            page.title = f"{meta['id']}: {meta['title']}"
-    return markdown
