@@ -77,9 +77,9 @@ def define_env(env):
         for field, label in [('dependencies', 'Abhängig von'), ('references', 'Referenzen')]:
             ids = meta.get(field) or []
             links = [f"[{i}](../{adr_map[i]})" if i in adr_map else i for i in ids]
-            lines.append(f"**{label}:** {', '.join(links) if links else 'Keine'}")
+            lines.append(f"**{label}:** {', '.join(links) if links else 'Keine'}\n")
 
         bl = list(set(backlinks.get(meta.get('id'), [])))
-        if bl: lines.append(f"**Backlinks:** {', '.join(bl)}")
+        if bl: lines.append(f"**Backlinks:** {', '.join(bl)}\n")
 
         return "\n".join(lines) + "\n\n---"
