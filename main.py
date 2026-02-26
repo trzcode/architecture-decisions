@@ -36,7 +36,7 @@ def define_env(env):
                 for field, label in [('dependencies', 'Benötigt von'), ('references', 'Referenziert in')]:
                     for target in content.get(field) or []:
                         if target in backlinks:
-                            backlinks[target].append(f"{label}: [{curr_id}](../{file})")
+                            backlinks[target].append(f"{label}: [{curr_id}](../{link})")
         
         return adr_map, backlinks
 
